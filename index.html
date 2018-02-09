@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Map Generator</title>
-  </head>
-  <body>
-    <h1>Test Heading</h1>
-  </body>
+<head>
+  <title> Map Generator </title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <input type="button" onclick="window.location.reload()" class="reloadpage" value="Refresh">
+    <div class="dropdown">
+    <button onclick="dropdownFunction()" class="dropbtn"> Settings </button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#">Link 1 </a>
+    </div>
+  </div>
+</div>
+  <div class="mapGen">
+    <canvas id="map">
+    </canvas>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
