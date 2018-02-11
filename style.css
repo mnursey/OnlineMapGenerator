@@ -1,23 +1,28 @@
 html {
   background-color: #484848;
 }
+p {
+  color: white;
+  font-family: 'Amita';font-size: 14px;
+}
 .reloadpage {
   color: white;
-  text-shadow: 1px 0 0;
+  font-family: 'Amita';font-size: 16px;
   background-color: Transparent;
   background-repeat: no-repeat;
   outline: none;
   overflow: hidden;
   border: none;
   cursor: pointer;
+  margin-bottom: 20%;
 }
 .reloadpage:hover {
-  background-color: rgb(32, 32, 32);
+  background-color: rgba(32, 32, 32, 0.7);
   border-radius: 10px;
 }
 button {
   color: white;
-  text-shadow: 1px 0 0;
+  font-family: 'Amita';font-size: 16px;
   background-color: Transparent;
   background-repeat: no-repeat;
   outline: none;
@@ -27,8 +32,7 @@ button {
 }
 .navbar {
   text-align: center;
-  background-color: rgba(33, 33, 33, 0.5);
-  border: 1px solid #000000;
+  background-color: rgba(33, 33, 33, 0.7);
   border-radius: 10px;
   width: 5%;
 }
@@ -41,7 +45,7 @@ button {
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: rgb(32, 32, 32);
+    background-color: rgba(32, 32, 32, 0.7);
     border-radius: 10px;
 }
 
@@ -54,12 +58,12 @@ button {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+    padding: 50%;
     display: none;
     position: absolute;
     border-radius: 10px;
-    border: 1px solid #000000;
     min-width: 100px;
-    background-color: rgba(33, 33, 33, 0.5);
+    background-color: rgba(33, 33, 33, 0.7);
     z-index: 1;
 }
 
@@ -73,8 +77,61 @@ button {
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   border-radius: 10px;
-  background-color: rgba(115, 115, 115, 0.5);
+  background-color: rgba(115, 115, 115, 0.7);
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+/* Customize the label (the container) */
+.container {
+  color: white;
+  font-family: 'Amita';font-size: 16px;
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #607d8b;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
