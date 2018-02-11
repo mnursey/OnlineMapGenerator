@@ -1,19 +1,41 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <title> Map Generator </title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
 </head>
 <body>
   <div class="navbar">
-    <input type="button" onclick="window.location.reload()" class="reloadpage" value="Refresh">
     <div class="dropdown">
-    <button onclick="dropdownFunction()" class="dropbtn"> Settings </button>
+    <button onclick="dropdownFunction()" class="dropbtn"> Menu </button>
     <div id="myDropdown" class="dropdown-content">
-      <a href="#">Link 1 </a>
+      <input type="button" onclick="window.location.reload()" class="reloadpage" value="Refresh Map">
+      <p> By default all map elements are allowed,  uncheck an element to remove it from further map generations </p>
+          <label class="container">One
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Two
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Three
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Four
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        <input type="button" class="reloadpage" value="Apply settings">
+    </div>
     </div>
   </div>
-</div>
   <div class="mapGen">
     <canvas id="map">
     </canvas>
