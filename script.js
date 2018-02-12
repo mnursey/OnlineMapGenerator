@@ -160,10 +160,26 @@ function Chunk(x, y, type)
 
 Chunk.prototype.GenerateObjects = function()
 {
-  while(this.chunkObjects.length < 8)
+  var failCounter = 100;
+  while(this.chunkObjects.length < 8 && failCounter > 0)
   {
     console.log('Adding object to chunk');
-    this.chunkObjects.push(new MapObject(GetRndInteger(0, CHUNKSIZE),GetRndInteger(0, CHUNKSIZE), 'Plain', this))
+    mo = new MapObject(GetRndInteger(0, CHUNKSIZE),GetRndInteger(0, CHUNKSIZE), 'Plain', this);
+    var add = true;
+    for(var i = 0; i < this.chunkObjects.length; i++)
+    {
+      var dis = Math.sqrt(Math.pow(mo.pos.x - this.chunkObjects[i].pos.x,2) + Math.pow(mo.pos.y - this.chunkObjects[i].pos.y, 2));
+      if(dis < 30)
+        add = false;
+    }
+    if(add)
+    {
+      this.chunkObjects.push(mo);
+    }
+    else
+    {
+      failCounter--;
+    }
   }
 };
 
