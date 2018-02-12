@@ -6,12 +6,12 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
 </head>
-<body>
+<body onload="GenerateMap()">
   <div class="navbar">
     <div class="dropdown">
     <button onclick="dropdownFunction()" class="dropbtn"> Menu </button>
     <div id="myDropdown" class="dropdown-content">
-      <input type="button" onclick="window.location.reload()" class="reloadpage" value="Refresh Map">
+      <input type="button" onclick="GenerateMap()" class="reloadpage" value="Refresh Map">
       <p> By default all map elements are allowed,  uncheck an element to remove it from further map generations </p>
           <label class="container">One
             <input type="checkbox" checked="checked">
