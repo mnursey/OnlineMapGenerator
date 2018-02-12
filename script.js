@@ -13,21 +13,29 @@ var treeImages = [];
 const CHUNKSIZE = 256;
 
 function GenerateMap(){
-  var mountian0 = new Image();
-  var tree0 = new Image();
-  var tree1 = new Image();
-  mountianImages.push(mountian0);
-  treeImages.push(tree0);
-  treeImages.push(tree1);
+  mountianImages = [];
+  treeImages = [];
   MapChunks = [];
   DrawQue = [];
+
+  var mountian0 = new Image();
+  var mountian1 = new Image();
+  var tree0 = new Image();
+  var tree1 = new Image();
+
+  mountianImages.push(mountian0);
+  mountianImages.push(mountian1);
+  treeImages.push(tree0);
+  treeImages.push(tree1);
+
   camera.Setup();
   camera.ResizeCanvas();
-  treeImages[0].onload = function(){
+   mountianImages[1].onload = function(){
     GenerateChunks(4, 2);
     DrawMap();
   };
-  mountian0.src = 'mountian0.png';
+  mountian0.src = 'mountain0.png';
+  mountian1.src = 'mountain1.png';
   tree0.src = 'tree0.png';
   tree1.src = 'tree1.png';
   camera.DrawText(0, 15, 'Loading...','White', '100', 'Amita');
