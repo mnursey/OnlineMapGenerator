@@ -1,5 +1,5 @@
 html {
-  background-color: #484848;
+  /*background-color: #484848;*/
 }
 p {
   color: white;
@@ -9,7 +9,7 @@ body, html, div, p{
   z-index: 1;
 }
 canvas{
-  background-color: #e0dcafff;
+  /*background-color: #e0dcafff;*/
   position: absolute;
   z-index: 0;
 }

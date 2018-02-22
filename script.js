@@ -32,7 +32,7 @@ function GenerateMap(){
 
   camera.Setup();
   camera.ResizeCanvas();
-   mountianImages[2].onload = function(){
+    treeImages[1].onload = function(){
     GenerateChunks(6, 4);
     DrawMap();
   };
@@ -107,6 +107,12 @@ var camera = {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   },
 
+  FillScene : function(colour)
+  {
+    camera.DrawRectangle(0 + this.canvas.width / 2, 0 + this.canvas.height / 2, this.canvas.width, this.canvas.height, 0, colour);
+  }
+  ,
+
   ResizeCanvas: function()
   {
     var canvas = document.getElementById("map");
@@ -147,6 +153,7 @@ function GenerateChunks(width, height)
 function DrawMap()
 {
   camera.ClearScene();
+  camera.FillScene('#e0dcafff');
   DrawQue = [];
   for(var i = 0; i < MapChunks.length; i++)
   {
