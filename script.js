@@ -20,22 +20,25 @@ function GenerateMap(){
 
   var mountian0 = new Image();
   var mountian1 = new Image();
+  var hill0 = new Image();
   var tree0 = new Image();
   var tree1 = new Image();
 
   mountianImages.push(mountian0);
   mountianImages.push(mountian1);
+  mountianImages.push(hill0);
   treeImages.push(tree0);
   treeImages.push(tree1);
 
   camera.Setup();
   camera.ResizeCanvas();
-   mountianImages[1].onload = function(){
-    GenerateChunks(4, 2);
+   mountianImages[2].onload = function(){
+    GenerateChunks(6, 4);
     DrawMap();
   };
   mountian0.src = 'mountain0.png';
   mountian1.src = 'mountain1.png';
+  hill0.src = 'hill0.png';
   tree0.src = 'tree0.png';
   tree1.src = 'tree1.png';
   camera.DrawText(0, 15, 'Loading...','White', '100', 'Amita');
@@ -199,14 +202,14 @@ Chunk.prototype.GenerateObjects = function()
   switch(this.type)
   {
     case 'mountians':
-      objectCount = 8;
+      objectCount = 16;
       objectMinDistance = 30;
       break;
     case 'woods':
-      objectCount = 64;
+      objectCount = 700;
       objectMinDistance = 4;
       objectClusterMax = 32;
-      clusterSpread = CHUNKSIZE/4;
+      clusterSpread = CHUNKSIZE;
       break;
     default:
       objectCount = 0;
