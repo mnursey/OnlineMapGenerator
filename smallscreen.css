@@ -3,7 +3,7 @@ html {
 }
 p {
   color: white;
-  font-family: 'Amita';font-size: 14px;
+  font-family: 'Amita';font-size: 20px;
 }
 body, html, div, p{
   z-index: 1;
@@ -16,7 +16,7 @@ canvas{
 
 .reloadpage {
   color: white;
-  font-family: 'Amita';font-size: 16px;
+  font-family: 'Amita';font-size: 30px;
   background-color: Transparent;
   background-repeat: no-repeat;
   outline: none;
@@ -48,9 +48,11 @@ button {
 }
 /* Dropdown Button */
 .dropbtn {
+    height: 100px;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 45px;
 }
 
 
@@ -95,7 +97,7 @@ button {
 /* Customize the label (the container) */
 .container {
   color: white;
-  font-family: 'Amita';font-size: 16px;
+  font-family: 'Amita';font-size: 20px;
   display: block;
   position: relative;
   margin-bottom: 12px;
