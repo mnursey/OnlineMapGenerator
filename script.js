@@ -21,12 +21,14 @@ function GenerateMap(){
   var mountian0 = new Image();
   var mountian1 = new Image();
   var hill0 = new Image();
+  var hill1 = new Image();
   var tree0 = new Image();
   var tree1 = new Image();
 
   mountianImages.push(mountian0);
   mountianImages.push(mountian1);
   mountianImages.push(hill0);
+  mountianImages.push(hill1);
   treeImages.push(tree0);
   treeImages.push(tree1);
 
@@ -39,6 +41,7 @@ function GenerateMap(){
   mountian0.src = 'mountain0.png';
   mountian1.src = 'mountain1.png';
   hill0.src = 'hill0.png';
+  hill1.src = 'hill1.png';
   tree0.src = 'tree0.png';
   tree1.src = 'tree1.png';
   camera.DrawText(0, 15, 'Loading...','White', '100', 'Amita');
@@ -209,7 +212,7 @@ Chunk.prototype.GenerateObjects = function()
   switch(this.type)
   {
     case 'mountians':
-      objectCount = 16;
+      objectCount = 64;
       objectMinDistance = 30;
       break;
     case 'woods':
