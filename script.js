@@ -7,14 +7,16 @@ function dropdownFunction() {
 /*Map Generation*/
 var MapChunks = [];
 var DrawQue = [];
-var types = ['mountians', 'woods'];
+var types = ['mountians', 'woods', 'grass'];
 var mountianImages = [];
 var treeImages = [];
+var grassImages = [];
 const CHUNKSIZE = 256;
 
 function GenerateMap(){
   mountianImages = [];
   treeImages = [];
+  grassImages = [];
   MapChunks = [];
   DrawQue = [];
 
@@ -24,6 +26,9 @@ function GenerateMap(){
   var hill1 = new Image();
   var tree0 = new Image();
   var tree1 = new Image();
+  var grass0 = new Image();
+  var grass1 = new Image();
+  var grass2 = new Image();
 
   mountianImages.push(mountian0);
   mountianImages.push(mountian1);
@@ -31,6 +36,9 @@ function GenerateMap(){
   mountianImages.push(hill1);
   treeImages.push(tree0);
   treeImages.push(tree1);
+  grassImages.push(grass0);
+  grassImages.push(grass1);
+  grassImages.push(grass2);
 
   camera.Setup();
   camera.ResizeCanvas();
@@ -42,8 +50,12 @@ function GenerateMap(){
   mountian1.src = 'mountain1.png';
   hill0.src = 'hill0.png';
   hill1.src = 'hill1.png';
+  grass0.src = 'grass0.png';
+  grass1.src = 'grass1.png';
+  grass2.src = 'grass2.png';
   tree0.src = 'tree0.png';
   tree1.src = 'tree1.png';
+
   camera.DrawText(0, 15, 'Loading...','White', '100', 'Amita');
 }
 
@@ -189,6 +201,9 @@ MapObject.prototype.Draw = function()
     case 'woods':
       im = treeImages[GetRndInteger(0, treeImages.length)];
       break;
+    case 'grass':
+      im = grassImages[GetRndInteger(0, grassImages.length)];
+      break;
     default:
       im = new Image();
   }
@@ -220,6 +235,12 @@ Chunk.prototype.GenerateObjects = function()
       objectMinDistance = 4;
       objectClusterMax = 32;
       clusterSpread = CHUNKSIZE;
+      break;
+    case 'grass':
+      objectCount = 32;
+      objectMinDistance = 20;
+      objectClusterMax = 3;
+      clusterSpread = 30;
       break;
     default:
       objectCount = 0;
