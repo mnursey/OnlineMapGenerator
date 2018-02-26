@@ -1,8 +1,9 @@
 html {
-  background-color: #000000;
+  /* background-color: #000000; */
 }
 p {
   color: white;
+  font-family: 'Amita';font-size: 14px;
 }
 body, html, div, p{
   z-index: 1;
@@ -22,7 +23,7 @@ canvas{
   overflow: hidden;
   border: none;
   cursor: pointer;
-  margin-bottom: 20%;
+  margin-top: 5%;
 }
 .reloadpage:hover {
   background-color: rgba(32, 32, 32, 0.7);
@@ -47,7 +48,7 @@ button {
 }
 /* Dropdown Button */
 .dropbtn {
-    color: blue;
+    color: white;
     border: none;
     cursor: pointer;
 }
@@ -57,7 +58,6 @@ button {
 .dropdown {
     text-align: center;
     position: relative;
-    width: 100%;
     background-color: rgba(33, 33, 33, 0.7);
     border-radius: 10px;
     z-index: 2;
@@ -68,11 +68,10 @@ button {
 }
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    padding: 50%;
+    width: 100%;
     display: none;
     position: absolute;
     border-radius: 10px;
-    min-width: 100px;
     background-color: rgba(33, 33, 33, 0.7);
     z-index: 3;
 }
@@ -117,7 +116,7 @@ button {
 .checkmark {
   position: absolute;
   top: 7px;
-  left: 0;
+  left: 45%;
   height: 15px;
   width: 15px;
   background-color: #eee;
