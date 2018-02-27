@@ -59,6 +59,9 @@ function GenerateMap(){
 
   camera.DrawText(0, 15, 'Loading...','White', '100', 'Amita');
   document.getElementById("downloadbtn").addEventListener('click', download, false);
+  window.onresize = function(event) {
+    DisplayNewMap();
+  };
 }
 
 function DisplayNewMap()
