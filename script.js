@@ -3,11 +3,14 @@ toggle between hiding and showing the dropdown content */
 function dropdownFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b8a48554e291f3214999583fafc58c14e272dc2
 function download() {
-    var dt = canvas.toDataURL();
+    var dt = camera.canvas.toDataURL();
     this.href = dt; //this may not work in the future..
 }
-document.getElementById("downloadbtn").addEventListener('click', download, false);
 
 /*Map Generation*/
 var MapChunks = [];
@@ -22,8 +25,6 @@ function GenerateMap(){
   mountianImages = [];
   treeImages = [];
   grassImages = [];
-  MapChunks = [];
-  DrawQue = [];
 
   var mountian0 = new Image();
   var mountian1 = new Image();
@@ -46,10 +47,8 @@ function GenerateMap(){
   grassImages.push(grass2);
 
   camera.Setup();
-  camera.ResizeCanvas();
     treeImages[1].onload = function(){
-    GenerateChunks(6, 4);
-    DrawMap();
+    DisplayNewMap();
   };
   mountian0.src = 'mountain0.png';
   mountian1.src = 'mountain1.png';
@@ -62,12 +61,14 @@ function GenerateMap(){
   tree1.src = 'tree1.png';
 
   camera.DrawText(0, 15, 'Loading...','White', '100', 'Amita');
+  document.getElementById("downloadbtn").addEventListener('click', download, false);
 }
 
 function DisplayNewMap()
 {
   MapChunks = [];
   DrawQue = [];
+  camera.ResizeCanvas();
   GenerateChunks(6, 4);
   DrawMap();
 }
