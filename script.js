@@ -3,7 +3,6 @@ toggle between hiding and showing the dropdown content */
 function dropdownFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
 /*Map Generation*/
 var MapChunks = [];
 var DrawQue = [];
