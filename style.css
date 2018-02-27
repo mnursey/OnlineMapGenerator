@@ -1,6 +1,15 @@
 html {
   /*background-color: #484848;*/
 }
+a {
+  color: white;
+  font-family: 'Amita';font-size: 16px;
+  cursor: pointer;
+}
+a:hover {
+  background-color: rgba(32, 32, 32, 0.7);
+  border-radius: 10px;
+}
 p {
   color: white;
   font-family: 'Amita';font-size: 14px;

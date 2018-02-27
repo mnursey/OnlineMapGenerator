@@ -1,6 +1,18 @@
 html {
   /* background-color: #000000; */
 }
+a {
+  color: white;
+  font-family: 'Amita';font-size: 30px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  outline: none;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 p {
   color: white;
   font-family: 'Amita';font-size: 25px;
