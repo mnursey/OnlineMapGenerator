@@ -132,9 +132,9 @@ var camera = {
 
   FillScene : function(colour)
   {
+    console.log('Fill scene');
     camera.DrawRectangle(0 + this.canvas.width / 2, 0 + this.canvas.height / 2, this.canvas.width, this.canvas.height, 0, colour);
-  }
-  ,
+  },
 
   ResizeCanvas: function()
   {
@@ -165,38 +165,38 @@ function GenerateChunks(width, height)
   {
     for(var y = 0; y < height; y++)
     {
-      console.log('Generating new Chunk');
+      //console.log('Generating new Chunk');
       var c = new Chunk(x, y, types[GetRndInteger(0, types.length)]);
       c.GenerateObjects()
       MapChunks.push(c);
     }
   }
-};
+}
 
 function DrawMap()
 {
   camera.ClearScene();
-  camera.FillScene('#e0dcafff');
+  camera.FillScene('#e0dcaf');
   DrawQue = [];
   for(var i = 0; i < MapChunks.length; i++)
   {
-    console.log('Drawing Chunk');
+    //console.log('Drawing Chunk');
     MapChunks[i].QueMapObjects();
   }
   DrawQue.sort(CompareDrawPrecedenceMapObjects);
   for(var i = 0; i < DrawQue.length; i++)
   {
-    console.log('Draw Que');
+    //console.log('Draw Que');
     DrawQue[i].Draw();
   }
-};
+}
 
 function MapObject(x, y, type, chunk)
 {
   this.pos = new Vector(x, y);
   this.type = type;
   this.parentChunk = chunk;
-};
+}
 
 MapObject.prototype.Draw = function()
 {
@@ -216,14 +216,14 @@ MapObject.prototype.Draw = function()
       im = new Image();
   }
   camera.DrawImage(this.pos.x + this.parentChunk.pos.x * CHUNKSIZE - camera.position.x, this.pos.y + this.parentChunk.pos.y * CHUNKSIZE - camera.position.y, im, 128, 128);
-};
+}
 
 function Chunk(x, y, type)
 {
   this.pos = new Vector(x, y);
   this.type = type;
   this.chunkObjects = []
-};
+}
 
 Chunk.prototype.GenerateObjects = function()
 {
@@ -256,7 +256,7 @@ Chunk.prototype.GenerateObjects = function()
   }
   while(this.chunkObjects.length < objectCount && failCounter > 0)
   {
-    console.log('Adding object to chunk');
+    //console.log('Adding object to chunk');
     mo = new MapObject(GetRndInteger(0, CHUNKSIZE),GetRndInteger(0, CHUNKSIZE), this.type, this);
     var add = true;
     for(var i = 0; i < this.chunkObjects.length; i++)
@@ -279,24 +279,24 @@ Chunk.prototype.GenerateObjects = function()
       failCounter--;
     }
   }
-};
+}
 
 Chunk.prototype.QueMapObjects = function() {
   for(var i = 0; i < this.chunkObjects.length; i++)
   {
     DrawQue.push(this.chunkObjects[i]);
   }
-};
+}
 
 function Vector(x, y)
 {
 	this.x = x;
 	this.y = y;
-};
+}
 
 function GetRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;
-};
+}
 
 function CompareDrawPrecedenceMapObjects(a, b)
 {
@@ -311,4 +311,4 @@ function CompareDrawPrecedenceMapObjects(a, b)
   }
 
   return 0;
-};
+}
