@@ -3,10 +3,7 @@ toggle between hiding and showing the dropdown content */
 function dropdownFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 6b8a48554e291f3214999583fafc58c14e272dc2
 function download() {
     var dt = camera.canvas.toDataURL();
     this.href = dt; //this may not work in the future..
