@@ -4,6 +4,12 @@ function dropdownFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
+function download() {
+    var dt = canvas.toDataURL();
+    this.href = dt; //this may not work in the future..
+}
+document.getElementById("downloadbtn").addEventListener('click', download, false);
+
 /*Map Generation*/
 var MapChunks = [];
 var DrawQue = [];
