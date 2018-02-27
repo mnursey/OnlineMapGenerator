@@ -59,6 +59,14 @@ function GenerateMap(){
   camera.DrawText(0, 15, 'Loading...','White', '100', 'Amita');
 }
 
+function DisplayNewMap()
+{
+  MapChunks = [];
+  DrawQue = [];
+  GenerateChunks(6, 4);
+  DrawMap();
+}
+
 var camera = {
   position : new Vector(0,0),
   canvas : document.getElementById("map"),
