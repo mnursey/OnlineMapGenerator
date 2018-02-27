@@ -3,16 +3,12 @@ toggle between hiding and showing the dropdown content */
 function dropdownFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-<<<<<<< HEAD
-=======
-
 function download() {
     var dt = canvas.toDataURL();
     this.href = dt; //this may not work in the future..
 }
 document.getElementById("downloadbtn").addEventListener('click', download, false);
 
->>>>>>> e01d26d4c5e6deb4176a8cee0beea847dbb90dfc
 /*Map Generation*/
 var MapChunks = [];
 var DrawQue = [];
