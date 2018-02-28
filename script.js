@@ -69,7 +69,7 @@ function DisplayNewMap()
   MapChunks = [];
   DrawQue = [];
   camera.ResizeCanvas();
-  GenerateChunks(6, 4);
+  GenerateChunks(camera.canvas.width / CHUNKSIZE, camera.canvas.height/ CHUNKSIZE);
   DrawMap();
 }
 
