@@ -8,13 +8,31 @@ html {
   position: relative;
   margin: 0 auto;
 }
+#leftBtn {
+  position: relative;
+  float: left;
+}
+#rightBtn {
+  position: relative;
+  float: right;
+}
+.upBtnDiv {
+  background-color: rgba(33, 33, 33, 0.7);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+.lrdBtnDiv {
+  background-color: rgba(33, 33, 33, 0.7);
+  border-radius: 10px;
+}
 .navComp {
   text-align: center;
   float: right;
   position: relative;
   display: inline-block;
-  background-color: rgba(33, 33, 33, 0.7);
-  border-radius: 10px;
   z-index: 2;
 }
 .infoDiv {
