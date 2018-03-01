@@ -64,7 +64,7 @@ function GenerateMap(){
   document.getElementById("hName").value = Math.ceil(camera.canvas.height / CHUNKSIZE);
 
   window.onresize = function(event) {
-    DisplayNewMap();
+    ReDrawMap();
   };
 }
 
@@ -78,6 +78,12 @@ function DisplayNewMap()
 
   camera.ResizeCanvas();
   GenerateChunks(chunkWidthAmount, chunkHeightAmount);
+  DrawMap();
+}
+
+function ReDrawMap()
+{
+  camera.ResizeCanvas();
   DrawMap();
 }
 
@@ -205,11 +211,12 @@ function DrawMap()
   }
 }
 
-function MapObject(x, y, type, chunk)
+function MapObject(x, y, type, chunk, variation)
 {
   this.pos = new Vector(x, y);
   this.type = type;
   this.parentChunk = chunk;
+  this.variation = variation;
 }
 
 MapObject.prototype.Draw = function()
@@ -218,13 +225,13 @@ MapObject.prototype.Draw = function()
   switch(this.type)
   {
     case 'mountians':
-      im = mountianImages[GetRndInteger(0, mountianImages.length)];
+      im = mountianImages[this.variation];
       break;
     case 'woods':
-      im = treeImages[GetRndInteger(0, treeImages.length)];
+      im = treeImages[this.variation];
       break;
     case 'grass':
-      im = grassImages[GetRndInteger(0, grassImages.length)];
+      im = grassImages[this.variation];
       break;
     default:
       im = new Image();
@@ -246,23 +253,27 @@ Chunk.prototype.GenerateObjects = function()
   var objectMinDistance = 0;
   var objectClusterMax = 0;
   var clusterSpread = 0;
+  var numOfImageVariations = 0;
   switch(this.type)
   {
     case 'mountians':
       objectCount = 64;
       objectMinDistance = 30;
+      numOfImageVariations = mountianImages.length;
       break;
     case 'woods':
       objectCount = 700;
       objectMinDistance = 4;
       objectClusterMax = 32;
       clusterSpread = CHUNKSIZE;
+      numOfImageVariations = treeImages.length;
       break;
     case 'grass':
       objectCount = 32;
       objectMinDistance = 20;
       objectClusterMax = 3;
       clusterSpread = 30;
+      numOfImageVariations = grassImages.length;
       break;
     default:
       objectCount = 0;
@@ -271,7 +282,7 @@ Chunk.prototype.GenerateObjects = function()
   while(this.chunkObjects.length < objectCount && failCounter > 0)
   {
     //console.log('Adding object to chunk');
-    mo = new MapObject(GetRndInteger(0, CHUNKSIZE),GetRndInteger(0, CHUNKSIZE), this.type, this);
+    mo = new MapObject(GetRndInteger(0, CHUNKSIZE),GetRndInteger(0, CHUNKSIZE), this.type, this, GetRndInteger(0, numOfImageVariations));
     var add = true;
     for(var i = 0; i < this.chunkObjects.length; i++)
     {
@@ -284,7 +295,7 @@ Chunk.prototype.GenerateObjects = function()
       this.chunkObjects.push(mo);
       for(var n = GetRndInteger(0, objectClusterMax); n < objectClusterMax; n++)
       {
-        var so = new MapObject(mo.pos.x + GetRndInteger(0, clusterSpread) - clusterSpread / 2, mo.pos.y + GetRndInteger(0, clusterSpread) - clusterSpread / 2, this.type, this);
+        var so = new MapObject(mo.pos.x + GetRndInteger(0, clusterSpread) - clusterSpread / 2, mo.pos.y + GetRndInteger(0, clusterSpread) - clusterSpread / 2, this.type, this, GetRndInteger(0, numOfImageVariations));
         this.chunkObjects.push(so);
       }
     }
