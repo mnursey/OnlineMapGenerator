@@ -4,7 +4,21 @@ html {
 #infoP {
   color: black;
 }
+#upBtn {
+  position: relative;
+  margin: 0 auto;
+}
+.navComp {
+  text-align: center;
+  float: right;
+  position: relative;
+  display: inline-block;
+  background-color: rgba(33, 33, 33, 0.7);
+  border-radius: 10px;
+  z-index: 2;
+}
 .infoDiv {
+  display: inline-block;
   text-align: center;
   margin: 0 auto;
   margin-top: 1%;
@@ -16,6 +30,14 @@ html {
 		          10px 0px 10px -6px rgba(0,0,0,0.5);
 }
 #createdBy {
+  text-align: center;
+  color: grey;
+  font-family: 'Amita';font-size: 14px;
+}
+.createdBy {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
   color: grey;
   font-family: 'Amita';font-size: 14px;
 }
