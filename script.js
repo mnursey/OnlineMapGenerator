@@ -3,6 +3,7 @@ toggle between hiding and showing the dropdown content */
 function dropdownFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
+
 function download() {
     var dt = camera.canvas.toDataURL();
     this.href = dt; //this may not work in the future..
@@ -43,7 +44,7 @@ function GenerateMap(){
   grassImages.push(grass2);
 
   camera.Setup();
-    treeImages[1].onload = function(){
+  treeImages[1].onload = function(){
     DisplayNewMap();
   };
   mountian0.src = 'mountain0.png';
@@ -58,6 +59,10 @@ function GenerateMap(){
 
   camera.DrawText(0, 15, 'Loading...','White', '100', 'Amita');
   document.getElementById("downloadbtn").addEventListener('click', download, false);
+  camera.ResizeCanvas();
+  document.getElementById("wName").value = Math.ceil(camera.canvas.width / CHUNKSIZE);
+  document.getElementById("hName").value = Math.ceil(camera.canvas.height / CHUNKSIZE);
+
   window.onresize = function(event) {
     DisplayNewMap();
   };
@@ -67,8 +72,12 @@ function DisplayNewMap()
 {
   MapChunks = [];
   DrawQue = [];
+  // Get info from user
+  chunkWidthAmount = Math.round(document.getElementById("wName").value);
+  chunkHeightAmount = Math.round(document.getElementById("hName").value);
+
   camera.ResizeCanvas();
-  GenerateChunks(camera.canvas.width / CHUNKSIZE, camera.canvas.height/ CHUNKSIZE);
+  GenerateChunks(chunkWidthAmount, chunkHeightAmount);
   DrawMap();
 }
 
