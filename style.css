@@ -24,9 +24,15 @@ html {
   position: relative;
   margin: 0 auto;
 }
+.upBtnDiv:hover {
+  background-color: rgba(115, 115, 115, 0.7);
+}
 .lrdBtnDiv {
   background-color: rgba(33, 33, 33, 0.7);
   border-radius: 10px;
+}
+.lrdBtnDiv:hover {
+  background-color: rgba(115, 115, 115, 0.7);
 }
 .navComp {
   text-align: center;
