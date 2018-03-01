@@ -1,14 +1,26 @@
 html {
   /*background-color: #484848;*/
 }
-a {
+input[type=text], select {
+  width: 100%;
+  font-family: 'Amita';font-size: 12px;
+  padding: 4px 6px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid rgba(32, 32, 32, 0.7);
+}
+label {
+  color: white;
+  font-family: 'Amita';font-size: 16px;
+}
+#downloadbtn {
   color: white;
   font-family: 'Amita';font-size: 16px;
   cursor: pointer;
 }
-a:hover {
+#downloadbtn:hover {
   background-color: rgba(32, 32, 32, 0.7);
-  border-radius: 10px;
+  border-radius: 10px
 }
 p {
   color: white;
