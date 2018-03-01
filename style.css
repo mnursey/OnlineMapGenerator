@@ -12,9 +12,22 @@ html {
   position: relative;
   float: left;
 }
+#leftBtn:hover {
+  background-color: rgba(115, 115, 115, 0.7);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
 #rightBtn {
   position: relative;
   float: right;
+}
+#rightBtn:hover {
+  background-color: rgba(115, 115, 115, 0.7);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#downBtn:hover {
+  background-color: rgba(115, 115, 115, 0.7);
 }
 .upBtnDiv {
   background-color: rgba(33, 33, 33, 0.7);
@@ -31,15 +44,51 @@ html {
   background-color: rgba(33, 33, 33, 0.7);
   border-radius: 10px;
 }
-.lrdBtnDiv:hover {
-  background-color: rgba(115, 115, 115, 0.7);
-}
 .navComp {
   text-align: center;
   float: right;
   position: relative;
   display: inline-block;
   z-index: 2;
+}
+.zoomDiv {
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  display: inline-block;
+  z-index: 2;
+}
+.zoomBtns {
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+}
+#zoomIn {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-family: 'Amita';font-size: 20px;
+  background-color: rgba(33, 33, 33, 0.7);
+  position: relative;
+  float: left;
+}
+#zoomIn:hover {
+  background-color: rgba(115, 115, 115, 0.7);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#zoomOut {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: 'Amita';font-size: 20px;
+  background-color: rgba(33, 33, 33, 0.7);
+  position: relative;
+  float: right;
+}
+#zoomOut:hover {
+  background-color: rgba(115, 115, 115, 0.7);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .infoDiv {
   display: inline-block;
