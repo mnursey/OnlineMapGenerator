@@ -3,7 +3,11 @@ toggle between hiding and showing the dropdown content */
 function dropdownFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
+function viewGuide() {
+  if (confirm("View the user guide?")) {
+    window.open('instructions.html','1519862714954','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
+  }
+}
 function download() {
     var dt = camera.canvas.toDataURL();
     this.href = dt; //this may not work in the future..
