@@ -1,6 +1,27 @@
 html {
   background-color: #e0dcaf;
 }
+.exitBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #990000;
+  font-family: 'Amita';font-size: 15px;
+}
+.exitBtn:hover {
+  background-color: #b30000;
+}
+.instructions {
+  background-color: rgba(217, 217, 217, 0.7);
+  padding: 10px;
+  display: none;
+  position: relative;
+  margin: auto;
+  border-radius: 10px;
+  width: 50%;
+  min-width: 100px;
+  z-index: 4;
+}
 #infoP {
   color: black;
 }
@@ -91,6 +112,7 @@ html {
   border-bottom-right-radius: 10px;
 }
 .infoDiv {
+  background-color: #e6e6e6;
   display: inline-block;
   text-align: center;
   margin: 0 auto;
@@ -104,7 +126,7 @@ html {
 }
 #createdBy {
   text-align: center;
-  color: grey;
+  color: black;
   font-family: 'Amita';font-size: 14px;
 }
 .createdBy {
