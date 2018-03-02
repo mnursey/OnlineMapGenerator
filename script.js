@@ -6,6 +6,27 @@ function dropdownFunction() {
 function instructionReveal() {
   document.getElementById("instructions").classList.toggle("show");
 }
+
+function moveRight(){
+  camera.Translate(camera.position.x + window.innerWidth / 40, camera.position.y);
+  ReDrawMap();
+}
+
+function moveLeft(){
+  camera.Translate(camera.position.x - window.innerWidth / 40, camera.position.y);
+  ReDrawMap();
+}
+
+function moveUp(){
+  camera.Translate(camera.position.x, camera.position.y - window.innerHeight / 40);
+  ReDrawMap();
+}
+
+function moveDown(){
+  camera.Translate(camera.position.x, camera.position.y + window.innerHeight / 40);
+  ReDrawMap();
+}
+
 function viewGuide() {
   //if (confirm("View the user guide?")) {
   instructionReveal();
@@ -73,6 +94,22 @@ function GenerateMap(){
   window.onresize = function(event) {
     ReDrawMap();
   };
+
+  document.addEventListener('keydown', (event) => {
+  let key = event.key;
+  if (key === 'ArrowLeft') {
+    moveLeft();
+  }
+  if (key === 'ArrowRight') {
+    moveRight();
+  }
+  if (key === 'ArrowUp') {
+    moveUp();
+  }
+  if (key === 'ArrowDown') {
+    moveDown();
+  }
+  }, false);
 }
 
 function DisplayNewMap()
