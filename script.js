@@ -95,7 +95,7 @@ function GenerateMap(){
     ReDrawMap();
   };
 
-  document.addEventListener('keydown', (event) => {
+  document.addEventListener('keyup', (event) => {
   let key = event.key;
   if (key === 'ArrowLeft') {
     moveLeft();
