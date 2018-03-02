@@ -7,9 +7,9 @@ function instructionReveal() {
   document.getElementById("instructions").classList.toggle("show");
 }
 function viewGuide() {
-  if (confirm("View the user guide?")) {
-    instructionReveal();
-  }
+  //if (confirm("View the user guide?")) {
+  instructionReveal();
+  //}
 }
 function download() {
     var dt = camera.canvas.toDataURL();
