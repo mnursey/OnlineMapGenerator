@@ -21,7 +21,7 @@
         <label for="wName"> Map width: </label>
         <input type="text" id="wName" name="cWidth" value=""><br>
       </form>
-          <label class="container">Mountains
+          <label class="container">Mountain
             <input type="checkbox" checked="checked">
             <span class="checkmark"></span>
           </label>
@@ -40,7 +40,7 @@
             <input type="checkbox" checked="checked">
             <span class="checkmark"></span>
           </label>
-        <a onclick="instructionReveal()">
+        <a  onclick="instructionReveal()" class="instructionBtn">
           <img src="informationSign.png" width="40px" height="40px"/>
         </a>
         <a id="downloadbtn" download="map.png" crossorigin>Download as image</a>
@@ -68,7 +68,7 @@
       <button type="button" onclick="instructionReveal()" id="Xbtn" name="Xbtn"> X </button>
     </div>
     <div class="infoDiv">
-      <h2>Welcome to the kingdom!</h2>
+      <h2>Welcome to our Map Generator</h2>
       <h3 id="infoP">
         Instructions:
       </h3>
@@ -86,6 +86,18 @@
       <br>
       <h4> The zoom buttons: </h4>
           Click on the "+" or "-" in the bottom right corner to zoom in and out of the map.
+    </div>
+    <div class="infoMobile">
+      <h2>Welcome to our Map Generator</h2>
+      <h4>The menu: </h4>
+          Width and height inputs affect the map width and height.
+          <br>
+          Tap the information icon to display this help text again.
+          <br>
+          Tap the download image button to save an image of the map.
+          <br>
+          Terrain buttons are currently not working and are being worked on.
+      <br>
     </div>
     <div class="createdBy">
       <p id="createdBy">Created by Mitchell Nursey and Damon Pullan 2018</p>

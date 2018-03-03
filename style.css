@@ -1,6 +1,9 @@
 html {
   background-color: #e0dcaf;
 }
+.infoMobile {
+  display: none;
+}
 .exitBtn {
   position: absolute;
   top: 0;
