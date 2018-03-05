@@ -7,6 +7,19 @@ function instructionReveal() {
   document.getElementById("instructions").classList.toggle("show");
 }
 
+function zoomIn()
+{
+  scale += 0.2;
+  ReDrawMap();
+}
+
+function zoomOut()
+{
+  let tempScale = scale - 0.2;
+  if (tempScale > 0.01)
+    scale = tempScale;
+  ReDrawMap();
+}
 function moveRight(){
   camera.Translate(camera.position.x + window.innerWidth / 40, camera.position.y);
   ReDrawMap();
@@ -45,6 +58,7 @@ var mountianImages = [];
 var treeImages = [];
 var grassImages = [];
 const CHUNKSIZE = 256;
+var scale = 1.0;
 
 function GenerateMap(){
   mountianImages = [];
@@ -280,7 +294,7 @@ MapObject.prototype.Draw = function()
     default:
       im = new Image();
   }
-  camera.DrawImage(this.pos.x + this.parentChunk.pos.x * CHUNKSIZE - camera.position.x, this.pos.y + this.parentChunk.pos.y * CHUNKSIZE - camera.position.y, im, 128, 128);
+  camera.DrawImage(scale * this.pos.x + scale * this.parentChunk.pos.x * CHUNKSIZE - camera.position.x, scale * this.pos.y + scale * this.parentChunk.pos.y * CHUNKSIZE - camera.position.y, im, 128 * scale, 128 * scale);
 }
 
 function Chunk(x, y, type)
