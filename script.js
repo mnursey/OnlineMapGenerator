@@ -53,10 +53,11 @@ function download() {
 /*Map Generation*/
 var MapChunks = [];
 var DrawQue = [];
-var types = ['mountians', 'woods', 'grass'];
+var types = ['mountians', 'woods', 'grass', 'castle'];
 var mountianImages = [];
 var treeImages = [];
 var grassImages = [];
+var castleImages = [];
 const CHUNKSIZE = 256;
 var scale = 1.0;
 
@@ -64,7 +65,7 @@ function GenerateMap(){
   mountianImages = [];
   treeImages = [];
   grassImages = [];
-
+  castleImages = [];
   var mountian0 = new Image();
   var mountian1 = new Image();
   var hill0 = new Image();
@@ -74,7 +75,7 @@ function GenerateMap(){
   var grass0 = new Image();
   var grass1 = new Image();
   var grass2 = new Image();
-
+  var castle0 = new Image();
   mountianImages.push(mountian0);
   mountianImages.push(mountian1);
   mountianImages.push(hill0);
@@ -84,6 +85,7 @@ function GenerateMap(){
   grassImages.push(grass0);
   grassImages.push(grass1);
   grassImages.push(grass2);
+  castleImages.push(castle0);
 
   camera.Setup();
   treeImages[1].onload = function(){
@@ -96,6 +98,7 @@ function GenerateMap(){
   grass0.src = 'grass0.png';
   grass1.src = 'grass1.png';
   grass2.src = 'grass2.png';
+  castle0.src = 'castle0.png';
   tree0.src = 'tree0.png';
   tree1.src = 'tree1.png';
 
@@ -291,6 +294,9 @@ MapObject.prototype.Draw = function()
     case 'grass':
       im = grassImages[this.variation];
       break;
+    case 'castle':
+      im = castleImages[this.variation];
+      break
     default:
       im = new Image();
   }
@@ -332,6 +338,11 @@ Chunk.prototype.GenerateObjects = function()
       objectClusterMax = 3;
       clusterSpread = 30;
       numOfImageVariations = grassImages.length;
+      break;
+    case 'castle':
+      objectCount = 1;
+      objectMinDistance = 50;
+      numOfImageVariations = castleImages.length;
       break;
     default:
       objectCount = 0;
