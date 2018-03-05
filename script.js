@@ -112,7 +112,11 @@ function GenerateMap(){
     ReDrawMap();
   };
 
-  document.addEventListener('keyup', (event) => {
+  document.addEventListener('keyup', userInput);
+}
+
+function userInput(event)
+{
   let key = event.key;
   if (key === 'ArrowLeft') {
     moveLeft();
@@ -126,7 +130,6 @@ function GenerateMap(){
   if (key === 'ArrowDown') {
     moveDown();
   }
-  }, false);
 }
 
 function DisplayNewMap()
